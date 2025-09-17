@@ -1,0 +1,234 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #212121;
+}
+
+.container .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  padding: 20px 0px;
+  box-shadow: 0px 0px 10px grey;
+}
+.container .header .nav {
+  color: white;
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+}
+.container .header .nav h3 {
+  position: relative;
+  font-family: "poppins", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.7px;
+  font-weight: 300;
+  padding-bottom: 3px;
+}
+.container .header .nav h3::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #ff6a00, #ee0979, #00c6ff, #ff6a00, #ee0979);
+  transform: skewX(100deg);
+  transition: width 0.3s ease-in-out;
+}
+.container .todo-container {
+  padding-top: 15%;
+  color: white;
+  text-align: center;
+  font-family: "poppins", sans-serif;
+}
+@media (min-width: 768px) {
+  .container .todo-container {
+    padding-top: 7%;
+  }
+}
+.container .todo-container h2 {
+  font-size: 30px;
+  letter-spacing: 1.7px;
+}
+@media (min-width: 768px) {
+  .container .todo-container h2 {
+    font-size: 40px;
+  }
+}
+.container .todo-container .Add-task {
+  padding-top: 25px;
+}
+.container .todo-container .Add-task input {
+  padding: 12px;
+  width: 50%;
+  font-size: 15px;
+  color: white;
+  outline: none;
+  letter-spacing: 0.7px;
+  background-color: transparent;
+  border: 1px solid lightgreen;
+  text-transform: capitalize;
+}
+@media (min-width: 768px) {
+  .container .todo-container .Add-task input {
+    width: 27%;
+  }
+}
+.container .todo-container .Add-task .btn {
+  margin-left: 5px;
+  font-size: 15px;
+  padding: 12px 10px;
+  color: black;
+  letter-spacing: 0.7px;
+  border: none;
+  background-color: aquamarine;
+  cursor: pointer;
+}
+.container .taskcount {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  text-transform: capitalize;
+  padding-top: 60px;
+}
+.container .taskcount p {
+  font-size: 17px;
+  color: aqua;
+  letter-spacing: 0.7px;
+}
+.container .Tasks {
+  width: 87%;
+  border: 1px solid gray;
+  margin: 30px auto;
+  padding: 15px 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px gray;
+  font-family: "poppins", sans-serif;
+}
+@media (min-width: 768px) {
+  .container .Tasks {
+    width: 50%;
+  }
+}
+.container .Tasks h2 {
+  text-align: center;
+  letter-spacing: 1.5px;
+  color: #00c6ff;
+  font-size: 20px;
+}
+.container .Tasks .Notasks {
+  color: #ff6a00;
+  text-align: center;
+  padding-top: 20px;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+.container .Tasks .taskcontainer {
+  margin: 15px 10px;
+  text-transform: capitalize;
+  letter-spacing: 0.7px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media (min-width: 768px) {
+  .container .Tasks .taskcontainer {
+    gap: 30px;
+    margin: 20px;
+  }
+}
+.container .Tasks .taskcontainer .task {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid gray;
+  box-shadow: 0px 0px 10px grey;
+  border-radius: 10px;
+  font-size: 16px;
+}
+.container .Tasks .taskcontainer .task:hover .btns {
+  width: 31%;
+  visibility: visible;
+  opacity: 1;
+}
+@media (min-width: 768px) {
+  .container .Tasks .taskcontainer .task:hover .btns {
+    width: 25%;
+  }
+}
+.container .Tasks .taskcontainer .task .check-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: coral;
+}
+.container .Tasks .taskcontainer .task .check-box .check {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1px solid grey;
+  border-radius: 50%;
+  position: relative;
+}
+.container .Tasks .taskcontainer .task .check-box .check:checked {
+  background-color: green;
+}
+.container .Tasks .taskcontainer .task .check-box .check:checked::before {
+  content: "✔";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10px;
+  color: white;
+  font-weight: bold;
+}
+.container .Tasks .taskcontainer .task .btns {
+  width: 0%;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  gap: 10px;
+  overflow: hidden;
+  height: auto;
+  transition: all 0.4s ease-in-out;
+}
+.container .Tasks .taskcontainer .task .btns .delbtn,
+.container .Tasks .taskcontainer .task .btns .editbtn {
+  border: 1px solid grey;
+  border-radius: 7px;
+  font-weight: 600;
+  outline: none;
+  padding: 10px;
+  color: white;
+  font-size: 14px;
+  background: none;
+  letter-spacing: 0.7px;
+  cursor: pointer;
+}
+.container .Tasks .taskcontainer .task .btns .delbtn {
+  color: red;
+}
+.container .Tasks .taskcontainer .task .btns .delbtn:hover {
+  opacity: 0.8;
+}
+.container .Tasks .taskcontainer .task .btns .editbtn {
+  color: yellowgreen;
+}
+.container .Tasks .taskcontainer .task .btns .editbtn:hover {
+  opacity: 0.8;
+}/*# sourceMappingURL=todo.css.map */

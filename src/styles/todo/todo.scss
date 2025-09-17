@@ -1,0 +1,266 @@
+@import '../../mixin';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #212121;
+}
+
+.container {
+
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: black;
+        padding: 20px 0px;
+        box-shadow: 0px 0px 10px grey;
+
+        .nav {
+            color: white;
+            display: flex;
+            justify-content: center;
+            text-transform: uppercase;
+
+            h3 {
+                position: relative;
+                font-family: "poppins", sans-serif;
+                font-size: 16px;
+                letter-spacing: .7px;
+                font-weight: 300;
+                padding-bottom: 3px;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    bottom: 0px;
+                    width: 100%;
+                    height: 3px;
+                    background: linear-gradient(90deg, #ff6a00, #ee0979, #00c6ff, #ff6a00, #ee0979);
+                    transform: skewX(100deg);
+                    transition: width .3s ease-in-out;
+
+                }
+            }
+        }
+    }
+
+    .todo-container {
+        padding-top: 15%;
+        color: white;
+        text-align: center;
+        font-family: "poppins", sans-serif;
+
+        @include screen("md") {
+            padding-top: 7%;
+        }
+
+        h2 {
+            font-size: 30px;
+            letter-spacing: 1.7px;
+
+            @include screen("md") {
+                font-size: 40px;
+            }
+
+        }
+
+        .Add-task {
+            padding-top: 25px;
+
+            input {
+                padding: 12px;
+                width: 50%;
+                font-size: 15px;
+                color: white;
+                outline: none;
+                letter-spacing: .7px;
+                background-color: transparent;
+                border: 1px solid lightgreen;
+                text-transform: capitalize;
+
+                @include screen("md") {
+                    width: 27%;
+                }
+            }
+
+            .btn {
+                margin-left: 5px;
+                font-size: 15px;
+                padding: 12px 10px;
+                color: black;
+                letter-spacing: .7px;
+                border: none;
+                background-color: aquamarine;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .taskcount {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        text-transform: capitalize;
+        padding-top: 60px;
+
+        p {
+            font-size: 17px;
+            color: aqua;
+            letter-spacing: .7px;
+        }
+    }
+
+    .Tasks {
+        width: 87%;
+        border: 1px solid gray;
+        margin: 30px auto;
+        padding: 15px 10px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px gray;
+        font-family: "poppins", sans-serif;
+
+        @include screen("md") {
+            width: 50%;
+
+        }
+
+        h2 {
+            text-align: center;
+            letter-spacing: 1.5px;
+            color: #00c6ff;
+            font-size: 20px;
+        }
+
+        .Notasks {
+            color: #ff6a00;
+            text-align: center;
+            padding-top: 20px;
+            font-size: 20px;
+            text-transform: capitalize;
+        }
+
+        .taskcontainer {
+            margin: 15px 10px;
+            text-transform: capitalize;
+            letter-spacing: .7px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            @include screen("md") {
+                gap: 30px;
+                margin: 20px;
+            }
+
+            .task {
+                list-style-type: none;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px;
+                border: 1px solid gray;
+                box-shadow: 0px 0px 10px grey;
+                border-radius: 10px;
+                font-size: 16px;
+
+                &:hover {
+                    .btns {
+                        width: 31%;
+                        visibility: visible;
+                        opacity: 1;
+
+                        @include screen('md'){
+                            width:25%;
+                        }
+                    }
+                }
+
+                .check-box {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    color: coral;
+
+                    .check {
+                        appearance: none;
+                        width: 18px;
+                        height: 18px;
+                        border: 1px solid grey;
+                        border-radius: 50%;
+                        position: relative;
+
+                        &:checked {
+                            background-color: green;
+
+                            &::before {
+                                content: "\2714";
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                font-size: 10px;
+                                color: white;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+
+                }
+
+                .btns {
+
+                    width: 0%;
+                    opacity: 0;
+                    visibility: hidden;
+                    display: flex;
+                    gap: 10px;
+                    overflow: hidden;
+                    height: auto;
+                    transition: all .4s ease-in-out;
+
+                    .delbtn,
+                    .editbtn {
+                        border: 1px solid grey;
+                        border-radius: 7px;
+                        font-weight: 600;
+                        outline: none;
+                        padding: 10px;
+                        color: white;
+                        font-size: 14px;
+                        background: none;
+                        letter-spacing: .7px;
+                        cursor: pointer;
+
+                    }
+
+                    .delbtn {
+                        color: red;
+
+                        &:hover {
+                            opacity: .8;
+                        }
+                    }
+
+                    .editbtn {
+                        color: yellowgreen;
+
+                        &:hover {
+                            opacity: .8;
+                        }
+                    }
+                }
+
+            }
+
+        }
+
+    }
+}

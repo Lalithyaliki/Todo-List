@@ -1,0 +1,22 @@
+@mixin screen($breakpoint){
+    @if($breakpoint == "sm"){
+        @media(min-width: 576px) {
+            @content;
+        }
+    }
+
+    @else if($breakpoint == "md"){
+        @media(min-width: 768px) {
+            @content;
+        }
+    }
+
+     @else if($breakpoint == "lg"){
+        @media(min-width: 1024px) {
+            @content;
+        }
+    }
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
