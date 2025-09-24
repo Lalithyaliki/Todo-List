@@ -159,7 +159,7 @@ body {
   font-size: 16px;
 }
 .container .Tasks .taskcontainer .task:hover .btns {
-  width: 31%;
+  width: 33%;
   visibility: visible;
   opacity: 1;
 }
