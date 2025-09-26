@@ -18,7 +18,7 @@ body {
         left: 0;
         width: 100%;
         background-color: black;
-        padding: 20px 0px;
+        padding: 13px 0px;
         box-shadow: 0px 0px 10px grey;
 
         .nav {
@@ -51,13 +51,18 @@ body {
     }
 
     .todo-container {
-        padding-top: 15%;
+        padding-top: 17%;
         color: white;
         text-align: center;
         font-family: "poppins", sans-serif;
 
+        @include screen("sm") {
+            padding-top: 12%;
+        }
+
+
         @include screen("md") {
-            padding-top: 7%;
+            padding-top: 10%;
         }
 
         h2 {
@@ -104,12 +109,18 @@ body {
 
     .taskcount {
         display: flex;
-        flex-direction: row;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
         gap: 30px;
         text-transform: capitalize;
         padding-top: 60px;
+
+        @include screen("sm") {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
 
         p {
             font-size: 17px;
@@ -127,10 +138,14 @@ body {
         box-shadow: 0px 0px 10px gray;
         font-family: "poppins", sans-serif;
 
+        @include screen("sm") {
+            width: 75%;
+        }
+
         @include screen("md") {
             width: 50%;
-
         }
+
 
         h2 {
             text-align: center;
@@ -170,16 +185,14 @@ body {
                 box-shadow: 0px 0px 10px grey;
                 border-radius: 10px;
                 font-size: 16px;
+                position: relative;
 
                 &:hover {
                     .btns {
-                        width: 33%;
+                        right:3%;
+                        transform: translateX(-7px);
                         visibility: visible;
                         opacity: 1;
-
-                        @include screen('md'){
-                            width:25%;
-                        }
                     }
                 }
 
@@ -217,14 +230,14 @@ body {
 
                 .btns {
 
-                    width: 0%;
+                    position: absolute;
+                    top: 17%;
+                    right: 0%;
                     opacity: 0;
                     visibility: hidden;
                     display: flex;
                     gap: 10px;
-                    overflow: hidden;
-                    height: auto;
-                    transition: all .4s ease-in-out;
+                    transition: all .3s ease-in-out;
 
                     .delbtn,
                     .editbtn {
@@ -238,6 +251,22 @@ body {
                         background: none;
                         letter-spacing: .7px;
                         cursor: pointer;
+
+                        span {
+                            display: none;
+                        }
+
+                        @include screen("sm") {
+
+                            span {
+                                display: block;
+                            }
+
+                            i {
+                                display: none;
+                            }
+
+                        }
 
                     }
 

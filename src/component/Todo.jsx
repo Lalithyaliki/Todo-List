@@ -104,9 +104,13 @@ function Todo() {
                                 </div>
 
                                 <div className='btns'>
-                                    <button className='delbtn' onClick={(e) => { e.stopPropagation(); remove(task) }} >Delete</button>
+                                    <button className='delbtn' onClick={(e) => { e.stopPropagation(); remove(task) }} >
+                                        <i className="bi bi-trash"></i>
+                                        <span>Delete</span>
+                                        </button>
                                     <button onClick={() => edittask(task, index)} className='editbtn'>
-                                        Edit
+                                        <i className="bi bi-pencil-square"></i>
+                                        <span>Edit</span>
                                     </button>
                                 </div>
 

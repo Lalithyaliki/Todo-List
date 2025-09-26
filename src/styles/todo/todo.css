@@ -16,7 +16,7 @@ body {
   left: 0;
   width: 100%;
   background-color: black;
-  padding: 20px 0px;
+  padding: 13px 0px;
   box-shadow: 0px 0px 10px grey;
 }
 .container .header .nav {
@@ -44,14 +44,19 @@ body {
   transition: width 0.3s ease-in-out;
 }
 .container .todo-container {
-  padding-top: 15%;
+  padding-top: 17%;
   color: white;
   text-align: center;
   font-family: "poppins", sans-serif;
 }
+@media (min-width: 576px) {
+  .container .todo-container {
+    padding-top: 12%;
+  }
+}
 @media (min-width: 768px) {
   .container .todo-container {
-    padding-top: 7%;
+    padding-top: 10%;
   }
 }
 .container .todo-container h2 {
@@ -94,12 +99,19 @@ body {
 }
 .container .taskcount {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   gap: 30px;
   text-transform: capitalize;
   padding-top: 60px;
+}
+@media (min-width: 576px) {
+  .container .taskcount {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
 }
 .container .taskcount p {
   font-size: 17px;
@@ -114,6 +126,11 @@ body {
   border-radius: 10px;
   box-shadow: 0px 0px 10px gray;
   font-family: "poppins", sans-serif;
+}
+@media (min-width: 576px) {
+  .container .Tasks {
+    width: 75%;
+  }
 }
 @media (min-width: 768px) {
   .container .Tasks {
@@ -157,16 +174,13 @@ body {
   box-shadow: 0px 0px 10px grey;
   border-radius: 10px;
   font-size: 16px;
+  position: relative;
 }
 .container .Tasks .taskcontainer .task:hover .btns {
-  width: 33%;
+  right: 3%;
+  transform: translateX(-7px);
   visibility: visible;
   opacity: 1;
-}
-@media (min-width: 768px) {
-  .container .Tasks .taskcontainer .task:hover .btns {
-    width: 25%;
-  }
 }
 .container .Tasks .taskcontainer .task .check-box {
   display: flex;
@@ -198,14 +212,14 @@ body {
   font-weight: bold;
 }
 .container .Tasks .taskcontainer .task .btns {
-  width: 0%;
+  position: absolute;
+  top: 17%;
+  right: 0%;
   opacity: 0;
   visibility: hidden;
   display: flex;
   gap: 10px;
-  overflow: hidden;
-  height: auto;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .container .Tasks .taskcontainer .task .btns .delbtn,
 .container .Tasks .taskcontainer .task .btns .editbtn {
@@ -219,6 +233,20 @@ body {
   background: none;
   letter-spacing: 0.7px;
   cursor: pointer;
+}
+.container .Tasks .taskcontainer .task .btns .delbtn span,
+.container .Tasks .taskcontainer .task .btns .editbtn span {
+  display: none;
+}
+@media (min-width: 576px) {
+  .container .Tasks .taskcontainer .task .btns .delbtn span,
+  .container .Tasks .taskcontainer .task .btns .editbtn span {
+    display: block;
+  }
+  .container .Tasks .taskcontainer .task .btns .delbtn i,
+  .container .Tasks .taskcontainer .task .btns .editbtn i {
+    display: none;
+  }
 }
 .container .Tasks .taskcontainer .task .btns .delbtn {
   color: red;
