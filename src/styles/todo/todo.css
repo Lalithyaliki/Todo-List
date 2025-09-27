@@ -213,7 +213,7 @@ body {
 }
 .container .Tasks .taskcontainer .task .btns {
   position: absolute;
-  top: 15%;
+  top: 20%;
   right: 0%;
   opacity: 0;
   visibility: hidden;
@@ -221,13 +221,18 @@ body {
   gap: 10px;
   transition: all 0.3s ease-in-out;
 }
+@media (min-width: 576px) {
+  .container .Tasks .taskcontainer .task .btns {
+    top: 15%;
+  }
+}
 .container .Tasks .taskcontainer .task .btns .delbtn,
 .container .Tasks .taskcontainer .task .btns .editbtn {
   border: 1px solid grey;
   border-radius: 7px;
   font-weight: 600;
   outline: none;
-  padding: 10px;
+  padding: 8px;
   color: white;
   font-size: 14px;
   background: none;
@@ -239,6 +244,10 @@ body {
   display: none;
 }
 @media (min-width: 576px) {
+  .container .Tasks .taskcontainer .task .btns .delbtn,
+  .container .Tasks .taskcontainer .task .btns .editbtn {
+    padding: 10px;
+  }
   .container .Tasks .taskcontainer .task .btns .delbtn span,
   .container .Tasks .taskcontainer .task .btns .editbtn span {
     display: block;

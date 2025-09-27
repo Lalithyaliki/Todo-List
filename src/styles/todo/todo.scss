@@ -231,7 +231,7 @@ body {
                 .btns {
 
                     position: absolute;
-                    top: 15%;
+                    top: 20%;
                     right: 0%;
                     opacity: 0;
                     visibility: hidden;
@@ -239,13 +239,17 @@ body {
                     gap: 10px;
                     transition: all .3s ease-in-out;
 
+                     @include screen("sm") {
+                        top:15%;
+                     }
+
                     .delbtn,
                     .editbtn {
                         border: 1px solid grey;
                         border-radius: 7px;
                         font-weight: 600;
                         outline: none;
-                        padding: 10px;
+                        padding: 8px;
                         color: white;
                         font-size: 14px;
                         background: none;
@@ -257,6 +261,7 @@ body {
                         }
 
                         @include screen("sm") {
+                            padding:10px;
 
                             span {
                                 display: block;
