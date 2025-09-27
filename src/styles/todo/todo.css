@@ -213,7 +213,7 @@ body {
 }
 .container .Tasks .taskcontainer .task .btns {
   position: absolute;
-  top: 16%;
+  top: 15%;
   right: 0%;
   opacity: 0;
   visibility: hidden;
